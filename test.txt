@@ -1,0 +1,21 @@
+POST /rest/user/login HTTP/1.1
+Host: localhost:3000
+Content-Length: 48
+sec-ch-ua: "Not A(Brand";v="24", "Chromium";v="110"
+Accept: application/json, text/plain, */*
+Content-Type: application/json
+X-User-Email: oisin@hacker4.com
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.5481.78 Safari/537.36
+sec-ch-ua-platform: "Linux"
+Origin: http://localhost:3000
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:3000/
+Accept-Encoding: gzip, deflate
+Accept-Language: en-GB,en-US;q=0.9,en;q=0.8
+Cookie: language=en; cookieconsent_status=dismiss; welcomebanner_status=dismiss; continueCode=KOhmtaIPspS1H8ughoTMFoSki8UjMukMi1YfBbHKNtjLcwYCgmSNaU2NhLgIlpsJQiORSBkhWVtJy
+Connection: close
+
+{"email":"bender@juice-sh.op*","password":"test"}
